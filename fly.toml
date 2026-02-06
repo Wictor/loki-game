@@ -1,20 +1,23 @@
-# See https://fly.io/docs/reference/configuration/
-app = "loki-game"
-primary_region = "arn"
+# fly.toml app configuration file generated for app-little-fire-6312 on 2026-02-06T12:38:01Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'app-little-fire-6312'
+primary_region = 'iad'
 
 [build]
-  dockerfile = "Dockerfile"
-
-[env]
-  PORT = "3001"
 
 [http_service]
-  internal_port = 3001
+  internal_port = 8080
   force_https = true
-  auto_stop_machines = "suspend"
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
+  processes = ['app']
 
 [[vm]]
-  size = "shared-cpu-1x"
-  memory = "256mb"
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 256
