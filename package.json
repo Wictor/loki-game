@@ -1,0 +1,11 @@
+{
+  "name": "loki",
+  "private": true,
+  "workspaces": ["shared", "server", "client"],
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "test": "cd server && npm test",
+    "build": "cd client && npm run build"
+  }
+}
